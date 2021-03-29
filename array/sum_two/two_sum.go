@@ -6,3 +6,24 @@
  */
 
 package sum_two
+
+func twoSum(nums []int, target int) []int {
+	var (
+		res = []int{}
+		left = 0
+		right = len(nums) - 1
+	)
+	for left < right {
+		tmp := nums[left] + nums[right]
+		if tmp == target {
+			res = append(res, nums[left], nums[right])
+			break
+		}
+		if tmp < target {
+			left++
+			continue
+		}
+		right--
+	}
+	return res
+}
