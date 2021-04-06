@@ -3,6 +3,7 @@
 #### https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/
 ##### 题解
 ```
+双指针
 1 维护一个k记录元素出现次数
 2 维护一个i去重完的数据位置
     2.1 如果当前元素和前一个元素不一致，重置k，把当前值赋值给 i，i++
