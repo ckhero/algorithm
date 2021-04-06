@@ -21,7 +21,6 @@ func subsetsWithDup(nums []int) [][]int {
 	sort.Ints(nums)
 	var (
 		ans = [][]int{[]int{}}
-		ansMap = map[string]struct{}{}
 	)
 	var helper func(nums []int, path []int, start int)
 	helper = func(nums []int, path []int, start int) {
@@ -29,18 +28,14 @@ func subsetsWithDup(nums []int) [][]int {
 			return
 		}
 		for i := start; i < len(nums); i++ {
+			if i > start && nums[i] == nums[i-1] {
+				continue
+			}
 			path = append(path, nums[i])
 			tmp := make([]int, len(path))
 			copy(tmp, path)
-			key := ""
-			for _, val := range path {
-				key = fmt.Sprintf("%s_%d", key, val)
-			}
-			_, ok := ansMap[key]
-			if !ok {
-				ansMap[key] = struct{}{}
-				ans = append(ans, tmp)
-			}
+			ans = append(ans, tmp)
+
 			helper(nums, path, i+1)
 			path = path[0 : len(path)-1]
 		}
