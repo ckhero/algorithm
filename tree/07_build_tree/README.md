@@ -3,9 +3,10 @@
 #### https://leetcode-cn.com/problems/zhong-jian-er-cha-shu-lcof/
 ##### 题解
 ```
-res := strings.Builder{}
-res.WriteString("%20")
-res.WriteByte()
+前序遍历 中左右
+中序遍历 左中右
+
+通过根节点 定位他的左右子节点。然后去遍历
 ```
 
 ```
@@ -18,7 +19,7 @@ res.WriteByte()
 前序遍历 preorder = [3,9,20,15,7]
 中序遍历 inorder = [9,3,15,20,7]
 返回如下的二叉树：
-
+09CQueue
     3
    / \
   9  20
