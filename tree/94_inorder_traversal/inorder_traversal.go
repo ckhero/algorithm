@@ -30,7 +30,7 @@ func inorderTraversal(root *TreeNode) []int {
 	return res
 }
 
-// 递归2222
+// 递归2222222
 func inorderTraversalRecursion(root *TreeNode) []int {
 
 	var res []int
